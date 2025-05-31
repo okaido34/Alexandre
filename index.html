@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ItalCidadania - Consultoria e Processos de Cidadania Italiana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-in-out;
+        }
+        .animate-slideUp {
+            animation: slideUp 0.8s ease-out;
+        }
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+        body {
+            font-family: 'Raleway', sans-serif;
+        }
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0088CC 0%, #003366 100%);
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #0088CC;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://via.placeholder.com/50x50" alt="ItalCidadania Logo" class="h-12 mr-3">
+                <h1 class="playfair text-2xl font-bold text-blue-900">ItalCidadania</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-blue-900 hover:text-blue-600 font-medium transition">Início</a>
+                <a href="#services" class="text-blue-900 hover:text-blue-600 font-medium transition">Serviços</a>
+                <a href="#news" class="text-blue-900 hover:text-blue-600 font-medium transition">Notícias</a>
+                <a href="#process" class="text-blue-900 hover:text-blue-600 font-medium transition">Processo</a>
+                <a href="#contact" class="text-blue-900 hover:text-blue-600 font-medium transition">Contato</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-blue-900 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-lg">
+            <a href="#home" class="block py-2 text-blue-900 hover:text-blue-600">Início</a>
+            <a href="#services" class="block py-2 text-blue-900 hover:text-blue-600">Serviços</a>
+            <a href="#news" class="block py-2 text-blue-900 hover:text-blue-600">Notícias</a>
+            <a href="#process" class="block py-2 text-blue-900 hover:text-blue-600">Processo</a>
+            <a href="#contact" class="block py-2 text-blue-900 hover:text-blue-600">Contato</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 animate-slideUp">
+                <h2 class="playfair text-4xl md:text-5xl font-bold mb-6">Conquiste sua Cidadania Italiana</h2>
+                <p class="text-xl mb-8">Especialistas em processos judiciais e consultoria para brasileiros que buscam reconhecimento da cidadania italiana.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="bg-white text-blue-900 font-bold py-3 px-6 rounded-full hover:bg-gray-100 transition duration-300 text-center animate-pulse">
+                        Agende uma Consulta
+                    </a>
+                    <a href="#process" class="border-2 border-white text-white font-bold py-3 px-6 rounded-full hover:bg-white hover:text-blue-900 transition duration-300 text-center">
+                        Saiba Mais
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center animate-fadeIn">
+                <img src="https://via.placeholder.com/500x350" alt="Cidadania Italiana" class="rounded-lg shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 animate-slideUp">
+                    <div class="text-4xl font-bold text-blue-900 mb-2">+15K</div>
+                    <p class="text-gray-600">Brasileiros com processos abertos nos últimos 5 meses</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 animate-slideUp" style="animation-delay: 0.2s;">
+                    <div class="text-4xl font-bold text-blue-900 mb-2">87%</div>
+                    <p class="text-gray-600">Taxa de sucesso em processos judiciais</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 animate-slideUp" style="animation-delay: 0.4s;">
+                    <div class="text-4xl font-bold text-blue-900 mb-2">6-12</div>
+                    <p class="text-gray-600">Meses para conclusão do processo via judicial</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="playfair text-3xl md:text-4xl font-bold text-center text-blue-900 mb-12">Nossos Serviços</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 animate-fadeIn">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-gavel text-4xl"></i>
+                    </div>
+                    <h3 class="playfair text-xl font-bold mb-3">Processo Judicial</h3>
+                    <p class="text-gray-600 mb-4">Atuação completa em processos judiciais para reconhecimento de cidadania, com equipe especializada em direito italiano.</p>
+                    <a href="#" class="text-blue-900 font-medium hover:underline">Saiba mais →</a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 animate-fadeIn" style="animation-delay: 0.2s;">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-file-alt text-4xl"></i>
+                    </div>
+                    <h3 class="playfair text-xl font-bold mb-3">Documentação</h3>
+                    <p class="text-gray-600 mb-4">Busca, tradução juramentada e apostilamento de todos os documentos necessários para o processo.</p>
+                    <a href="#" class="text-blue-900 font-medium hover:underline">Saiba mais →</a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 animate-fadeIn" style="animation-delay: 0.4s;">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-search text-4xl"></i>
+                    </div>
+                    <h3 class="playfair text-xl font-bold mb-3">Pesquisa Genealógica</h3>
+                    <p class="text-gray-600 mb-4">Localização de certidões italianas e reconstrução da árvore genealógica para comprovar o direito à cidadania.</p>
+                    <a href="#" class="text-blue-900 font-medium hover:underline">Saiba mais →</a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 animate-fadeIn" style="animation-delay: 0.6s;">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-home text-4xl"></i>
+                    </div>
+                    <h3 class="playfair text-xl font-bold mb-3">Atendimento na Itália</h3>
+                    <p class="text-gray-600 mb-4">Suporte completo para quem deseja realizar o processo diretamente na Itália, com assessoria local.</p>
+                    <a href="#" class="text-blue-900 font-medium hover:underline">Saiba mais →</a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 animate-fadeIn" style="animation-delay: 0.8s;">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-passport text-4xl"></i>
+                    </div>
+                    <h3 class="playfair text-xl font-bold mb-3">Cidadania Materna</h3>
+                    <p class="text-gray-600 mb-4">Casos complexos de cidadania por via materna antes de 1948, com expertise em processos judiciais específicos.</p>
+                    <a href="#" class="text-blue-900 font-medium hover:underline">Saiba mais →</a>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 animate-fadeIn" style="animation-delay: 1s;">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-question-circle text-4xl"></i>
+                    </div>
+                    <h3 class="playfair text-xl font-bold mb-3">Consultoria Personalizada</h3>
+                    <p class="text-gray-600 mb-4">Análise individual do seu caso para determinar a melhor estratégia para obtenção da cidadania italiana.</p>
+                    <a href="#" class="text-blue-900 font-medium hover:underline">Saiba mais →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="playfair text-3xl md:text-4xl font-bold text-center text-blue-900 mb-12">Últimas Notícias</h2>
+            <p class="text-center text-lg mb-12 max-w-3xl mx-auto">Acompanhe as últimas atualizações sobre cidadania italiana para brasileiros nos últimos 5 meses.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- News Card 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md news-card transition duration-300 animate-fadeIn">
+                    <img src="https://via.placeholder.com/400x250" alt="Notícia 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">15/06/2023</div>
+                        <h3 class="playfair text-xl font-bold mb-3">Aumento de 40% nos processos judiciais</h3>
+                        <p class="text-gray-600 mb-4">Nos últimos 5 meses, houve um crescimento expressivo de brasileiros buscando a cidadania italiana via judicial.</p>
+                        <a href="#" class="text-blue-900 font-medium hover:underline">Ler mais →</a>
+                    </div>
+                </div>
+                
+                <!-- News Card 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md news-card transition duration-300 animate-fadeIn" style="animation-delay: 0.2s;">
+                    <img src="https://via.placeholder.com/400x250" alt="Notícia 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">02/07/2023</div>
+                        <h3 class="playfair text-xl font-bold mb-3">Novas regras para apostilamento</h3>
+                        <p class="text-gray-600 mb-4">Mudanças no processo de apostilamento de documentos podem afetar prazos para quem está buscando a cidadania.</p>
+                        <a href="#" class="text-blue-900 font-medium hover:underline">Ler mais →</a>
+                    </div>
+                </div>
+                
+                <!-- News Card 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md news-card transition duration-300 animate-fadeIn" style="animation-delay: 0.4s;">
+                    <img src="https://via.placeholder.com/400x250" alt="Notícia 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">20/07/2023</div>
+                        <h3 class="playfair text-xl font-bold mb-3">Cidades italianas com menor tempo de espera</h3>
+                        <p class="text-gray-600 mb-4">Lista atualizada das comunas italianas com menor fila para agendamento de reconhecimento de cidadania.</p>
+                        <a href="#" class="text-blue-900 font-medium hover:underline">Ler mais →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-blue-900 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300">
+                    Ver Todas as Notícias
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="playfair text-3xl md:text-4xl font-bold text-center text-blue-900 mb-12">Como Funciona o Processo</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Timeline -->
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="absolute left-4 md:left-1/2 h-full w-0.5 bg-blue-200 transform -translate-x-1/2"></div>
+                    
+                    <!-- Timeline Item 1 -->
+                    <div class="mb-12 flex flex-col md:flex-row items-center relative">
+                        <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right animate-slideUp">
+                            <h3 class="playfair text-xl font-bold text-blue-900 mb-2">1. Análise de Elegibilidade</h3>
+                            <p class="text-gray-600">Verificamos se você tem direito à cidadania italiana através da análise da sua árvore genealógica.</p>
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-blue-900 border-4 border-white transform -translate-x-1/2 flex items-center justify-center">
+                            <span class="text-white font-bold">1</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 2 -->
+                    <div class="mb-12 flex flex-col md:flex-row items-center relative">
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="md:w-1/2 md:pl-12 animate-slideUp" style="animation-delay: 0.2s;">
+                            <h3 class="playfair text-xl font-bold text-blue-900 mb-2">2. Coleta de Documentos</h3>
+                            <p class="text-gray-600">Buscamos todas as certidões necessárias no Brasil e na Itália, com tradução juramentada e apostilamento.</p>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-blue-900 border-4 border-white transform -translate-x-1/2 flex items-center justify-center">
+                            <span class="text-white font-bold">2</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 3 -->
+                    <div class="mb-12 flex flex-col md:flex-row items-center relative">
+                        <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right animate-slideUp" style="animation-delay: 0.4s;">
+                            <h3 class="playfair text-xl font-bold text-blue-900 mb-2">3. Abertura do Processo</h3>
+                            <p class="text-gray-600">Protocolamos o processo judicial na Itália com toda a documentação preparada por nossa equipe especializada.</p>
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-blue-900 border-4 border-white transform -translate-x-1/2 flex items-center justify-center">
+                            <span class="text-white font-bold">3</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 4 -->
+                    <div class="mb-12 flex flex-col md:flex-row items-center relative">
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="md:w-1/2 md:pl-12 animate-slideUp" style="animation-delay: 0.6s;">
+                            <h3 class="playfair text-xl font-bold text-blue-900 mb-2">4. Acompanhamento</h3>
+                            <p class="text-gray-600">Monitoramos todo o andamento do processo e mantemos você informado em cada etapa.</p>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-blue-900 border-4 border-white transform -translate-x-1/2 flex items-center justify-center">
+                            <span class="text-white font-bold">4</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 5 -->
+                    <div class="flex flex-col md:flex-row items-center relative">
+                        <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right animate-slideUp" style="animation-delay: 0.8s;">
+                            <h3 class="playfair text-xl font-bold text-blue-900 mb-2">5. Reconhecimento</h3>
+                            <p class="text-gray-600">Com a sentença favorável, seu registro é feito no comune italiano e você pode emitir seus documentos europeus.</p>
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="absolute left-4 md:left-1/2 w-8 h-8 rounded-full bg-blue-900 border-4 border-white transform -translate-x-1/2 flex items-center justify-center">
+                            <span class="text-white font-bold">5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-blue-50 rounded-lg p-8 max-w-4xl mx-auto animate-fadeIn">
+                <h3 class="playfair text-2xl font-bold text-blue-900 mb-4">Novidades no Processo Judicial</h3>
+                <p class="text-gray-700 mb-4">Nos últimos meses, observamos importantes mudanças nos processos judiciais de cidadania italiana:</p>
+                <ul class="list-disc pl-5 mb-6 space-y-2 text-gray-700">
+                    <li>Redução no tempo médio de julgamento para 8-10 meses</li>
+                    <li>Aumento na aceitação de processos via materna pré-1948</li>
+                    <li>Novos tribunais italianos aceitando processos de brasileiros</li>
+                    <li>Flexibilização em alguns requisitos documentais</li>
+                </ul>
+                <p class="text-gray-700">Nossa equipe está atualizada com todas as mudanças recentes para garantir o melhor resultado para seus clientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="playfair text-3xl md:text-4xl font-bold text-center text-blue-900 mb-12">Depoimentos</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md animate-fadeIn">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/60x60" alt="Cliente 1" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Carlos Silva</h4>
+                            <p class="text-sm text-gray-500">São Paulo - SP</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Consegui minha cidadania em apenas 9 meses através do processo judicial. A equipe foi incrível em todo o acompanhamento e me manteve informado em cada etapa."</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md animate-fadeIn" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/60x60" alt="Cliente 2" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Ana Paula Rocha</h4>
+                            <p class="text-sm text-gray-500">Belo Horizonte - MG</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Tinha um caso complexo por via materna antes de 1948 e pensei que não seria possível. A equipe me mostrou o caminho e hoje eu e minha família temos a cidadania reconhecida."</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md animate-fadeIn" style="animation-delay: 0.4s;">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/60x60" alt="Cliente 3" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Roberto Mendes</h4>
+                            <p class="text-sm text-gray-500">Porto Alegre - RS</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Depois de anos tentando pelo caminho administrativo, resolvi tentar o judicial. Em 7 meses tinha minha cidadania reconhecida. O investimento valeu cada centavo!"</p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-blue-900 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="playfair text-3xl md:text-4xl font-bold text-center mb-12">Entre em Contato</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="animate-slideUp">
+                    <h3 class="playfair text-2xl font-bold mb-6">Agende uma Consulta</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2">Nome Completo</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg bg-blue-800 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-white">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2">E-mail</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-blue-800 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-white">
+                        </div>
+                        <div>
+                            <label for="phone" class="block mb-2">Telefone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg bg-blue-800 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-white">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2">Mensagem</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg bg-blue-800 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-white"></textarea>
+                        </div>
+                        <button type="submit" class="bg-white text-blue-900 font-bold py-3 px-6 rounded-full hover:bg-gray-100 transition duration-300 w-full">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="animate-fadeIn">
+                    <h3 class="playfair text-2xl font-bold mb-6">Nossos Contatos</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4 mt-1 text-blue-300">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Escritório Principal</h4>
+                                <p>Av. Paulista, 1000 - São Paulo/SP</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4 mt-1 text-blue-300">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Telefone</h4>
+                                <p>(11) 9999-9999</p>
+                                <p>WhatsApp: (11) 98888-8888</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4 mt-1 text-blue-300">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">E-mail</h4>
+                                <p>contato@italcidadania.com.br</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4 mt-1 text-blue-300">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Horário de Atendimento</h4>
+                                <p>Segunda a Sexta: 9h às 18h</p>
+                                <p>Sábado: 9h às 13h</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-bold text-lg mb-4">Siga-nos nas Redes Sociais</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-blue-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-blue-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-blue-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="playfair text-3xl md:text-4xl font-bold text-center text-blue-900 mb-12">Perguntas Frequentes</h2>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden animate-fadeIn">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                        <h3 class="text-left font-medium text-blue-900">Qual a diferença entre o processo administrativo e judicial?</h3>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">O processo administrativo é feito diretamente nos consulados italianos ou comunas na Itália, com tempo de espera que pode chegar a 10 anos. O judicial é feito através de ação na Justiça Italiana, com prazo médio de 6-12 meses, sendo a opção mais rápida atualmente.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden animate-fadeIn" style="animation-delay: 0.1s;">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                        <h3 class="text-left font-medium text-blue-900">Quanto custa em média um processo judicial?</h3>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">O valor varia conforme a complexidade do caso, quantidade de documentos necessários e se há necessidade de pesquisa na Itália. Em média, os honorários advocatícios ficam entre R$ 15.000 e R$ 25.000, além dos custos com documentos e traduções.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden animate-fadeIn" style="animation-delay: 0.2s;">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                        <h3 class="text-left font-medium text-blue-900">Posso incluir minha família no mesmo processo?</h3>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">Sim, cônjuge e filhos menores podem ser incluídos no mesmo processo sem custos adicionais significativos. Para outros familiares (pais, irmãos), é necessário avaliar caso a caso.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden animate-fadeIn" style="animation-delay: 0.3s;">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                        <h3 class="text-left font-medium text-blue-900">Quais as vantagens da cidadania italiana?</h3>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">Além do passaporte europeu que permite morar, trabalhar e estudar em qualquer país da UE, você tem direito a serviços de saúde, educação gratuita ou subsidiada, possibilidade de transferência para países europeus em multinacionais, e acesso a programas de intercâmbio e bolsas de estudo.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden animate-fadeIn" style="animation-delay: 0.4s;">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                        <h3 class="text-left font-medium text-blue-900">E se meu ancestral italiano era mulher nascida antes de 1948?</h3>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">Esses casos só podem ser resolvidos via judicial, já que a Itália não reconhecia o direito de transmissão da cidadania por mulheres antes de 1948. Temos vasta experiência nesses processos com alta taxa de sucesso.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-800 text-white text-center">
+        <div class="container mx-auto px-4 animate-fadeIn">
+            <h2 class="playfair text-3xl md:text-4xl font-bold mb-6">Pronto para dar o primeiro passo?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Nossa equipe está pronta para ajudar você a conquistar sua cidadania italiana da forma mais rápida e segura possível.</p>
+            <a href="#contact" class="inline-block bg-white text-blue-900 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 mr-4 mb-4">
+                Fale Conosco
+            </a>
+            <a href="tel:+551199999999" class="inline-block border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-blue-900 transition duration-300">
+                <i class="fas fa-phone-alt mr-2"></i> (11) 9999-9999
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="playfair text-xl font-bold mb-4">ItalCidadania</h3>
+                    <p class="mb-4">Especialistas em processos judiciais e consultoria para cidadania italiana.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-blue-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-blue-300"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-blue-300"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="hover:text-blue-300"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-blue-300">Início</a></li>
+                        <li><a href="#services" class="hover:text-blue-300">Serviços</a></li>
+                        <li><a href="#news" class="hover:text-blue-300">Notícias</a></li>
+                        <li><a href="#process" class="hover:text-blue-300">Processo</a></li>
+                        <li><a href="#contact" class="hover:text-blue-300">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Serviços</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300">Processo Judicial</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Documentação</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Pesquisa Genealógica</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Atendimento na Itália</a></li>
+                        <li><a href="#" class="hover:text-blue-300">Cidadania Materna</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contato</h4>
+                    <address class="not-italic">
+                        <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i> Av. Paulista, 1000 - São Paulo/SP</p>
+                        <p class="mb-2"><i class="fas fa-phone-alt mr-2"></i> (11) 9999-9999</p>
+                        <p class="mb-2"><i class="fas fa-envelope mr-2"></i> contato@italcidadania.com.br</p>
+                        <p><i class="fas fa-clock mr-2"></i> Seg-Sex: 9h-18h | Sáb: 9h-13h</p>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2023 ItalCidadania - Todos os direitos reservados</p>
+                <p class="mt-2">Desenvolvido com <i class="fas fa-heart text-red-400"></i> para a comunidade brasileira na Itália</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('transform');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Scroll animations
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-fadeIn, .animate-slideUp');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
